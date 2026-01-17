@@ -1,0 +1,25 @@
+.headerbg{
+    background-color: #f8b864 ;
+}
+
+/* Dropdown default hidden */
+.navbar .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* thoda neeche se slide */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: block; /* required for animation */
+    margin-top: 0;
+}
+
+/* On hover, show dropdown smoothly */
+.navbar .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* original position */
+}
+
+/* Remove default arrow */
+.navbar .dropdown-toggle::after {
+    display: none;
+}
