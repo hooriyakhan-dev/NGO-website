@@ -1,200 +1,283 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-:root{
+/* ================= VARIABLES ================= */
+:root {
     --main: #f8b864;
-    --bg:#f2f2f2;
+    --bg: #f2f2f2;
+    --dark: #222;
+    --white: #fff;
+    --shadow: 0px 16px 28px rgba(0, 0, 0, 0.2);
+    --transition: 0.3s ease;
 }
-body{font-family: "Jost", sans-serif;}
-.top{
+
+/* ================= GLOBAL ================= */
+body {
+    font-family: "Jost", sans-serif;
+}
+
+/* ================= TOP BAR ================= */
+.top {
     background-color: var(--main) !important;
-    height: 40px !important;
-    position: fixed !important;
-    top: 0 !important;
-    right: 0;
-    left: 0;
+    height: 40px;
+    position: fixed;
+    inset: 0;
     z-index: 10;
 }
-.home{margin-top: 100px;
-color: white;}
-.home b{
-    color: #f8b864;
+
+.top p,
+.top i {
+    font-size: 15px;
+    font-weight: 300;
 }
-.top p, .top i{
-   font-size: 15px !important;
-   font-weight: lighter !important;
-    
-}
-.my-nav{
-  
+
+/* ================= NAVBAR ================= */
+.my-nav {
     position: fixed;
     top: 40px;
     left: 0;
     right: 0;
     z-index: 10;
 }
-.my-nav .nav-item a:hover{
+
+.my-nav .nav-item a:hover {
     color: var(--main);
-    transition: 0.3s;
+    transition: var(--transition);
 }
-.donet{
+
+/* ================= HOME ================= */
+.home {
+    margin-top: 100px;
+    color: var(--white);
+}
+
+.home b {
+    color: var(--main);
+}
+
+/* ================= BUTTONS ================= */
+.donet {
     background-color: var(--main) !important;
 }
-.wrapper{
+
+/* ================= WRAPPER ================= */
+.wrapper {
     margin-top: 300px;
 }
-.cause{
+
+/* ================= CAUSE ================= */
+.cause {
     background-color: var(--bg);
-    /* margin-top: 300px; */
 }
-.cause .content i,.campaigns i{
+
+.cause .content i,
+.campaigns i {
     color: var(--main) !important;
-    
 }
-.cause .content .do-btn{
+
+.cause .content .do-btn {
     position: absolute;
-   left: 20%; 
-    background-color:#f8b86497 ;
+    left: 20%;
+    background-color: #f8b86497;
     margin-top: 10px;
-    padding: 10px ;
+    padding: 10px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 500;
-  
+    transition: var(--transition);
 }
-.cause .content .btn2{left: 53%;}
-.cause .content .btn3{left: 83%;}
-.cause .content .do-btn:hover{
+
+.cause .content .btn2 {
+    left: 53%;
+}
+
+.cause .content .btn3 {
+    left: 83%;
+}
+
+.cause .content .do-btn:hover {
     background-color: var(--main);
-    transition: 0.3s;
 }
-.cause .content img:hover ,.about img:hover ,.img :hover{
+
+/* ================= IMAGES ================= */
+.cause .content img:hover,
+.about img:hover,
+.img :hover {
     opacity: 0.8;
-    transition: 0.3s;
-
+    transition: var(--transition);
 }
-.cause .causes .bar, .campaigns .bar{
-animation: bar 0.7s ease-in-out 0s 1 normal forwards;
- /* animation: bar linear; */
+
+/* ================= ANIMATION ================= */
+.cause .causes .bar,
+.campaigns .bar {
+    animation: bar 0.7s ease-in-out forwards;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%; 
-
+    animation-range: entry 0% cover 40%;
 }
 
-
-
- @keyframes bar {
-    0%{
+@keyframes bar {
+    from {
         opacity: 0;
     }
-    25%{
-        opacity: 0.25;
-    }
-    50%{opacity: 0.5;}
-75%{opacity: 0.75;}
-    100%{
-        opacity: 1;
-    }
-    
-} 
- /* @keyframes left {
-    from{
-        opacity: 0;
-        transform: translatex(-100px) ;
-    }
-    
-    to{
 
+    to {
         opacity: 1;
-        transform: translatex(0) ;
     }
-} */
-.counter .content h2{
+}
+
+/* ================= COUNTER ================= */
+.counter .content h2 {
     color: var(--main);
 }
 
+/* ================= STORIES ================= */
 .stories .story .content:hover {
-    box-shadow: 0px 16px 28px 0px rgba(0, 0, 0, 0.20);
+    box-shadow: var(--shadow);
     transform: scale(1.05);
-transition: 0.4s;
+    transition: 0.4s ease;
 }
-    
-.stories .story .content img:hover {
-    opacity: 1;
-    
 
-}
+/* ================= FOOTER ================= */
 footer {
-    background-color: #222;
+    background-color: var(--dark);
     background-image: url(./images/map.png);
     background-position: right 150px center;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-}
-footer li,.form li{
-  list-style: none;
-}
-footer .c2 li:hover{
-    color: var(--main);
-    transition: 0.3s;
-   border-bottom: 1px solid var(--main);
-}
-footer .content i{
-    color: var(--main);
-}
-@media (max-width:1200px) {
-    .cause .content .do-btn{left: 18%;}
-.cause .content .btn2{left: 48%;}
-.cause .content .btn3{left: 80%;}
 }
 
-.volunteers .circle,.about .circle{
-    height: 460px;
+footer li,
+.form li {
+    list-style: none;
+}
+
+footer .c2 li:hover {
+    color: var(--main);
+    border-bottom: 1px solid var(--main);
+    transition: var(--transition);
+}
+
+footer .content i {
+    color: var(--main);
+}
+
+/* ================= VOLUNTEERS / ABOUT ================= */
+.volunteers .circle,
+.about .circle {
+    position: absolute;
     width: 500px;
-  
+    height: 460px;
     opacity: 0.3;
     z-index: 1;
-    position: absolute;
-}
-.about .circle{ max-width:300px; height: 250px;}
-.volunteers .content,.about .content{
-   z-index: 2;
-}
-.volunteers .content .images{
-   z-index: 5;
-}
-.volunteers .content .images img:hover{
- border-radius: 50%;
-   
-   transition: 0.50s ease-in-out;
 }
 
-
-.post:hover ,.button .button:hover{
-    box-shadow: 0px 16px 28px 0px rgba(0, 0, 0, 0.20);
+.about .circle {
+    max-width: 300px;
+    height: 250px;
 }
 
-.button.b2{
+.volunteers .content,
+.about .content {
+    z-index: 2;
+}
+
+.volunteers .content .images {
+    z-index: 5;
+}
+
+.volunteers .content .images img:hover {
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+}
+
+/* ================= POSTS ================= */
+.post:hover,
+.button .button:hover {
+    box-shadow: var(--shadow);
+}
+
+/* ================= PAGINATION ================= */
+.button.b2 {
     background-color: var(--main) !important;
-    color: white;
+    color: var(--white);
 }
+
 .button .button {
-    margin: 3px;
     width: 40px;
     height: 40px;
-    border: 1px solid black;
-    font-weight: bolder;
-    background-color: white;
+    margin: 3px;
+    border: 1px solid #000;
+    font-weight: bold;
+    background-color: var(--white);
+}
 
+/* ================= DROPDOWN (HOVER) ================= */
+.dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: var(--transition);
+    margin-top: 0;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #F8B864;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.scroll-top:hover {
+    background-color: #f9c36d;
+    transform: translateY(-5px);
 }
 
 
 
+@media (min-width: 992px) {
+
+    .nav-item.dropdown:hover>.dropdown-menu {
+        display: block !important;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: all 0.3s ease-in-out;
+    }
 
 
+    .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: all 0.3s ease-in-out;
+    }
+}
 
-/*  box-shadow: 0px 16px 28px 0px rgba(0, 0, 0, 0.15); */
-/*  border-right: 1px dashed #ddd; */
 
-/* {} */
+@media (max-width: 991px) {
+
+    .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: 100%;
+        border: none;
+        background-color: #f9f9f9;
+    }
+}
